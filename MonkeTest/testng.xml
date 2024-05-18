@@ -1,0 +1,72 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="AllTests">
+    <test name="AllTests">
+        <packages>
+            <package name="org.example.*" />
+        </packages>
+    </test>
+
+    <test name="SmokeTests">
+        <groups>
+            <run>
+                <include name="smoke-test" />
+            </run>
+        </groups>
+        <classes>
+            <class name="GeometryTest" />
+            <class name="StringManipulatorTest" />
+        </classes>
+    </test>
+
+    <test name="CriticalPathTests">
+        <groups>
+            <run>
+                <include name="critical_path-test" />
+                <exclude name="smoke-test" />
+            </run>
+        </groups>
+        <classes>
+            <class name="GeometryTest" />
+            <class name="StringManipulatorTest" />
+        </classes>
+    </test>
+
+    <test name="ExtendedTests">
+        <groups>
+            <run>
+                <include name="extended-test" />
+                <exclude name="smoke-test" />
+                <exclude name="critical_path-test" />
+            </run>
+        </groups>
+        <classes>
+            <class name="GeometryTest" />
+            <class name="StringManipulatorTest" />
+        </classes>
+    </test>
+
+    <test name="PositiveTest">
+        <groups>
+            <run>
+                <include name="positive-test" />
+            </run>
+        </groups>
+        <classes>
+            <class name="GeometryTest" />
+            <class name="StringManipulatorTest" />
+        </classes>
+    </test>
+
+    <test name="NegativeTest">
+        <groups>
+            <run>
+                <include name="negative-test" />
+            </run>
+        </groups>
+        <classes>
+            <class name="GeometryTest" />
+            <class name="StringManipulatorTest" />
+        </classes>
+    </test>
+
+</suite>
